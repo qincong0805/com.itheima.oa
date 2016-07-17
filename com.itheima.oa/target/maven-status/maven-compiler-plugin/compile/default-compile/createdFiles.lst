@@ -1,0 +1,11 @@
+com\itheima\oa\domain\Person.class
+com\itheima\oa\service\impl\PersonServiceImpl.class
+com\itheima\oa\dao\impl\PersonDaoImpl.class
+com\itheima\oa\service\base\impl\BaseServiceImpl.class
+com\itheima\oa\service\base\BaseService.class
+com\itheima\oa\dao\base\BaseDao.class
+com\itheima\oa\struts\action\base\BaseAction.class
+com\itheima\oa\service\PersonService.class
+com\itheima\oa\dao\base\impl\BaseDaoImpl.class
+com\itheima\oa\struts\action\PersonAction.class
+com\itheima\oa\dao\PersonDao.class
