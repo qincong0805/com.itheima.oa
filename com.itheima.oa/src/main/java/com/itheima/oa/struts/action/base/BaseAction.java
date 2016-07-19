@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 
 public abstract class BaseAction<T> implements ModelDriven<T> {
-   public abstract BaseService<T> getBaseService();
+ //  public abstract BaseService<T> getBaseService();
 	
 	private Class modelDriverClass;
 	private Long id;
@@ -50,15 +50,14 @@ public abstract class BaseAction<T> implements ModelDriven<T> {
 	
 	
 	
-	@Override
 	public T getModel() {
 		// TODO Auto-generated method stub
 		return this.t;
 	}
 	
 	public String showDate(){
-		Collection<T> dateList = this.getBaseService().queryEntity();
-		System.out.println(dateList.size());
+		//Collection<T> dateList = this.getBaseService().queryEntity();
+		//System.out.println(dateList.size());
 		ActionContext.getContext().put("dateList", null);
 		return "list";
 	}
@@ -72,15 +71,16 @@ public abstract class BaseAction<T> implements ModelDriven<T> {
 		Object obj = this.modelDriverClass.newInstance();
 		BeanUtils.copyProperties(this.getModel(), obj);
 		T t = (T)obj;
-		this.getBaseService().saveEntity(t);
+		//this.getBaseService().saveEntity(t);
 		return "action2action";
 	}
 	
-	
+	/*
 	public String updateUI(){
 T t = this.getBaseService().getEntityById(this.id);
 	ActionContext.getContext().getValueStack().push(t);
 	return "updateUI";
 	
 	}
+	*/
 }

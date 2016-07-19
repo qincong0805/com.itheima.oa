@@ -11,8 +11,8 @@ public class PersonTest extends SpringUtils{
 	public void testPersonService(){
 		PersonService personService = (PersonService)context.getBean("personService");
 		Person person = new Person();
-		person.setName("王二麻子");
-		person.setDescription("纯爷们");
+		person.setName("1552989");
+		person.setDescription("98925");
 		personService.saveEntity(person);
 	}
 	

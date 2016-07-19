@@ -30,29 +30,24 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T>{
 	   this.entityClass = (Class)type.getActualTypeArguments()[0];
 	   System.out.println(type.getRawType());
    }
-	@Override
 	public void saveEntity(T t) {
 		this.hibernateTemplate.save(t);
 	}
 
-	@Override
 	public void deleteEntity(Serializable id) {
 		T t = (T)this.hibernateTemplate.get(this.entityClass, id);
 		this.hibernateTemplate.delete(t);
 	}
 
-	@Override
 	public void updateEntity(T t) {
 		this.hibernateTemplate.update(t);
 	}
 
-	@Override
 	public Collection<T> queryEntity() {
 		
 		return this.hibernateTemplate.find("from"+this.entityClass.getClass());
 	}
 
-	@Override
 	public T getEntityById(Serializable id) {
 		// TODO Auto-generated method stub
 		return (T)this.hibernateTemplate.get(this.entityClass, id);
